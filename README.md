@@ -2,8 +2,8 @@ Following the book by Nick Blundell:
 
 ***********************************************************************************************************************
 
-                                        Writing a Simple Operating System -
-                                                    from Scratch
+                                                Writing a Simple Operating System -
+                                                        from Scratch
 
 ***********************************************************************************************************************
 
@@ -17,28 +17,28 @@ boot.bin - Written in hexadecimal using Hex Fiend. Begins with 0xE9, 0xFD, 0xFF 
 Run using the command (for QEMU):
 
 -----------------------------------------------------------------------------------------------------------------------
-                        qemu-system-x86_64 -drive format=raw,file=boot.bin,if=floppy
+                                qemu-system-x86_64 -drive format=raw,file=boot.bin,if=floppy
 -----------------------------------------------------------------------------------------------------------------------
 
 boot_sect.asm - An x86 assembly code rendition of boot.bin. A more human readable type of machine code. Compiled to boot_sect.bin using the terminal command:
 
 -----------------------------------------------------------------------------------------------------------------------
-                                nasm boot_sect.asm -f bin -o boot_sect.bin
+                                        nasm boot_sect.asm -f bin -o boot_sect.bin
 -----------------------------------------------------------------------------------------------------------------------
 
 boot_sect.bin - Disk image compilation of boot_sect.asm (using nasm command above). Raw bytes can be viewed in the terminal using the command:
 
 -----------------------------------------------------------------------------------------------------------------------
-                                        od -t x1 -A n boot_sect.bin
+                                                od -t x1 -A n boot_sect.bin
 -----------------------------------------------------------------------------------------------------------------------
 
 Outputs (* = omitted zeros for brevity):
 
 -----------------------------------------------------------------------------------------------------------------------
-                ❯ od -t x1 -A n boot_sect.bin
-                        eb  fe  00  00  00  00  00  00  00  00  00  00  00  00  00  00
-                        00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
-                *
-                        00  00  00  00  00  00  00  00  00  00  00  00  00  00  55  aa
+                        ❯ od -t x1 -A n boot_sect.bin
+                                eb  fe  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+                                00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+                        *
+                                00  00  00  00  00  00  00  00  00  00  00  00  00  00  55  aa
 -----------------------------------------------------------------------------------------------------------------------
 
