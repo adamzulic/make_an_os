@@ -10,9 +10,9 @@ Following the book by Nick Blundell:
 or trying to..
 
 
-File list (commands listed are appropriate for my system):
+File list (commands listed are appropriate for my system - e.g. use of qemu):
 
-boot.bin - Written in hexadecimal using Hex Fiend. Begins with 0xE9, 0xFD, 0xFF (machine code instructions, defined by the CPU manufacturer, to perform an endless jump/infinite loop - holds the CPU's instruction pointer in the bootloader so it doesn't start running uninitialised bytes in memory). Null 0x00 bytes are then placed in between to ensure that the file is exactly 512 bytes. The last two bytes are 0x55 and 0xAA, which is the 'magic number'. The BIOS is programmed to look for the magic number at the *end* of a disk image file, which signals that the binary is a bootable disk image.
+boot.bin - Written in hexadecimal using Hex Fiend. Begins with 0xE9, 0xFD, 0xFF (machine code instructions, defined by the CPU manufacturer, to perform an endless jump/infinite loop - holds the CPU's instruction pointer within the bootloader's address space so it doesn't start running uninitialised bytes in memory). Null 0x00 bytes are then placed in between to ensure that the file is exactly 512 bytes. The last two bytes are 0x55 and 0xAA, which is the 'magic number'. The BIOS is programmed to look for the magic number at the *end* of a disk image file, which signals that the binary is a bootable disk image. In the case of this binary, which doesn't do much except create an infinite loop, loading it will produce a blinking cursor - rather than an 'Operating System not found' message. 
 
 Run using the command (for QEMU):
 
