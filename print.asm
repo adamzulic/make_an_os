@@ -1,5 +1,5 @@
 ;
-; Simple boot sectore that prints a message to the screen using a BIOS routine.
+; Simple boot sector that prints a message to the screen using a BIOS routine.
 ;
 
 mov ah, 0x0e    ; int 10/sh = 0eh -> Scrolling teletype BIOS routine.
